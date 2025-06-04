@@ -72,6 +72,10 @@ circle-text {
     align-items: center;
     justify-content: center;
 }
+.circle-text
+{
+	color : blue;
+}
 =======
 	
 >>>>>>> 8b4579c352262a57e8fbbae1217edbfec2e8f11a
