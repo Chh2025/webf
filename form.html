@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>HTML FORM</title>
+	  <style>
+	    body{border:6px solid brown;color:brown;height:495px;width:500px;margin:70px;border-radius: 10px}
+		p{background-color:yellow;color:red}
+		h1{text-align:center;color:brown}
+		form{text-align:center;font-weight:bold;color:black;border-radius: 10px;padding: 10px;margin :10px}
+	    .c{background-color:violet;width:500px;height:395px;margin:1px}
+		.d{background-color:yellow;width:500px;height:75px}
+		.E{background-color:white}
+		label {width:200px}
+		.main{display:flex;width:500px}
+		.F{background-color:violet}
+		
+
+	  </style>
+	  
+    
+   </head>
+     <body>
+	    <div class="d">
+	     <p>
+		  Q. Design a basic information form which takes name (input type),
+		  mobile no, email address, gender(radio), Education done(using checkbox) 
+		  and do you like tea? (using select). Also make one submit and one reset button in it.
+		 </p>
+		 </div>
+		 <div class="c">
+		 <div style="background-color:green">
+		  <hr />
+		  <hr />
+		  <hr />
+		 </div>
+		 <div class="E">
+		 <h1><u>BASIC INFORMATION FORM</u></h1>
+		 </div>
+		 <div style="background-color:green">
+		  <hr />
+		  <hr />
+		  <hr />
+		 </div>
+		 
+		 <form>
+		   <div class="main">
+		  <label for="NAME" >NAME</label>
+		  <input type="text">
+		  </div>
+		  <br>
+		   <div class="main">
+		  <label for="MOB NO">MOB NO</label>
+		  <input type="tel">
+		  </div>
+		  <br>
+		 <div class="main">
+		  <label for="EMAIL">EMAIL  </label>
+		  <input type="email">
+		  </div>
+		  <br>
+		
+		   <div class="F">
+		  <label for="Gender">Gender  <label>
+		  <input type="radio" name="gender">Male
+		  <input type="radio" name="gender">Female
+		  <input type="radio" name="gender">Transgender
+		  </div>
+		  <br>
+		 
+		  <label for="EDUCATION">EDUCATION</label>
+		  
+		 
+		  <label >
+           <input type="checkbox" value="XI" name="class" id="XI">XI
+          </label>
+		  
+          <label >
+            <input type="checkbox" value="XII" name="class" id="XII">XII
+          </label>
+		  <label >
+             <input type="checkbox" value="DIPLOMA" name="class" id="DIPLOMA">DIPLOMA
+          </label>
+		  <label >
+             <input type="checkbox" value="BSC" name="class" id="BSC">BSC
+          </label>
+		  <label >
+             <input type="checkbox" value="BTECH" name="class" id="BTECH">BTECH
+          </label>
+		  <br>
+		  <br>
+		  <label for="Do You Like Tea?">Do You Like Tea?</label>
+		  
+		   <select>
+		     <option value="Select">Select</option>
+		     <option value="Yes">Yes</option>
+             <option value="No">No</option>
+		   </select>
+		 <br>
+		 <br>
+		 <label> 
+		   <input type="submit">
+		 </label>
+		 
+		 <label> 
+		   <input type="reset">
+		 </label>
+		 
+		 </form>
+		</div>
+		
+	 
+	 
+	 
+	 
+	 </body>
+</html>
