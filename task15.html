@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Array Operations</title>
+  <style>
+  .k{ color:white;
+  background-color:green;}
+  .p{color:white;
+  background-color:red;}
+  </style>
+</head>
+<body>
+   <div class="k">
+     Q1. Write a program to sort a JavaScript Array.
+     <br>
+     Q2. Write a program to concatenate two array elements and store them in new array.
+     <br>
+     Q3. Write a program to remove first element from JavaScript Array.
+   
+   
+   
+   </div>
+<div class="p">
+  <h2>JavaScript Array Operations</h2>
+
+  <button onclick="sortArray()">1. Sort Array</button><br><br>
+  <button onclick="concatenateArrays()">2. Concatenate Arrays</button><br><br>
+  <button onclick="removeFirstElement()">3. Remove First Element</button><br><br>
+
+  <h3>Result:</h3>
+  <p id="output"></p>
+</div>
+  <script>
+    // Sample arrays
+    let array1 = [5, 2, 9, 1, 3];
+    let array2 = [10, 20, 30];
+    let array3 = [100, 200, 300, 400];
+
+    // 1. Sort array1
+    function sortArray() {
+      let sorted = [...array1].sort((a, b) => a - b);
+      document.getElementById("output").textContent = "Sorted Array: " + sorted.join(", ");
+    }
+
+    // 2. Concatenate array1 and array2
+    function concatenateArrays() {
+      let concatenated = array1.concat(array2);
+      document.getElementById("output").textContent = "Concatenated Array: " + concatenated.join(", ");
+    }
+
+    // 3. Remove first element from array3
+    function removeFirstElement() {
+      let modified = [...array3];  // clone to preserve original
+      let removed = modified.shift();
+      document.getElementById("output").textContent = 
+        "First Element Removed: " + removed + " | Remaining Array: " + modified.join(", ");
+    }
+  </script>
+
+</body>
+</html>
