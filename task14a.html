@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>task15</title>
+  <style>
+    .g{color:white;
+	background-color:blue;}
+    .k{background-color:red;}
+	h2{}
+  </style>
+</head>
+<body>
+    <div class="g">
+	  Q1.Write a function that filters out negative numbers.<br>
+	  Q2.Write a JavaScript function to get the difference between a given number and 13, if the number is greater than 13 return double the absolute difference.<br>
+	  Q3.Write a function of Fibonacci series using JavaScript<br>
+	  Q4.Write a JavaScript program to sum the multiples of 3 and 5 under 1000 using function.<br>
+      Q5. Write a program to return cube of a number using function object.<br>
+	
+	</div>
+   <div class="k">
+  <h2>Filter Out Negative Numbers</h2>
+  
+  <label for="numbers">Enter numbers (comma separated):</label><br>
+  <input type="text" id="numbers" placeholder=" 4, -3, 9, -1, 0, 7, -6">
+  <button onclick="filterNegatives()">Filter</button>
+
+  <h3>Filtered Output:</h3>
+  <p id="result1"></p>
+  <hr>
+  <hr>
+   <h2>Calculate Difference from 13</h2>
+
+  <label for="number">Enter a number:</label><br>
+  <input type="number" id="number" placeholder="Enter number">
+  <button onclick="calculateDifference()">Calculate</button>
+
+  <h3>Result2:</h3>
+  <p id="result"></p>
+   <hr>
+   <hr>
+   <h2>Fibonacci Series Generator</h2>
+
+  <label for="terms">Enter number of terms:</label><br>
+  <input type="number" id="terms" placeholder="e.g., 10">
+  <button onclick="generateFibonacci()">Generate</button>
+
+  <h3>Fibonacci Series:</h3>
+  <p id="result3"></p>
+  <hr>
+  <hr>
+   <h2>Sum of Multiples of 3 and 5 Below 1000</h2>
+
+  <button onclick="showSum()">Calculate</button>
+
+  <h3>Result:</h3>
+  <p id="result4"></p>
+  <hr<>
+  <hr>
+   <h2>Calculate Cube of a Number</h2>
+
+  <label for="number">Enter a number:</label><br>
+  <input type="number" id="number" placeholder="e.g., 5">
+  <button onclick="showCube()">Get Cube</button>
+
+  <h3>Result:</h3>
+  <p id="final"></p>
+
+  
+  </div>
+  <script>
+    function filterNegativeNumbers(arr) {
+      return arr.filter(num => num >= 0);
+    }
+
+    function filterNegatives() {
+      const input = document.getElementById('numbers').value;
+      const numberArray = input.split(',').map(Number);
+      const filtered = filterNegativeNumbers(numberArray);
+      document.getElementById('result1').textContent = filtered.join(', ');
+    }
+	//Q2 JS
+	   function differenceFrom13(num) {
+      if (num > 13) {
+        return 2 * Math.abs(num - 13);
+      } else {
+        return 13 - num;
+      }
+    }
+
+    function calculateDifference() {
+      const input = document.getElementById('number').value;
+      const num = parseFloat(input);
+
+      if (isNaN(num)) {
+        document.getElementById('result').textContent = "Please enter a valid number.";
+        return;
+      }
+
+      const result = differenceFrom13(num);
+      document.getElementById('result').textContent = "Result2: " + result;
+    }
+     
+	//Q3 js 
+     function fibonacciSeries(n) {
+      let fib = [];
+      for (let i = 0; i < n; i++) {
+        if (i === 0) {
+          fib.push(0);
+        } else if (i === 1) {
+          fib.push(1);
+        } else {
+          fib.push(fib[i - 1] + fib[i - 2]);
+        }
+      }
+      return fib;
+    }
+
+    function generateFibonacci() {
+      const input = document.getElementById('terms').value;
+      const n = parseInt(input);
+
+      if (isNaN(n) || n < 1) {
+        document.getElementById('result3').textContent = "Please enter a positive integer.";
+        return;
+      }
+
+      const series = fibonacciSeries(n);
+      document.getElementById('result3').textContent = series.join(', ');
+    }
+	//Q4 js
+	function sumMultiplesOf3And5(limit) {
+      let sum = 0;
+      for (let i = 1; i < limit; i++) {
+        if (i % 3 === 0 || i % 5 === 0) {
+          sum += i;
+        }
+      }
+      return sum;
+    }
+
+    function showSum() {
+      const result = sumMultiplesOf3And5(1000);
+      document.getElementById('result4').textContent = "The sum is: " + result;
+    }
+	//Q5 js 
+	 const cube = new Function('n', 'return n * n * n;');
+
+    function showCube() {
+      const num = parseFloat(document.getElementById('number').value);
+
+      if (isNaN(num)) {
+        document.getElementById('final').textContent = "Please enter a valid number.";
+        return;
+      }
+
+      const  = cube(num);
+      document.getElementById('final').textContent = "Cube of " + num + " is: " + final;
+    }
+
+     
+  </script>
+
+</body>
+</html>
+
