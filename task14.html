@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Tasks</title>
+  <style>
+  .q{
+     color:red;
+	 background-color:yellow;
+	
+	 height:92px;
+	 padding:10px;
+	 margin:2px;
+	 border-radius:10px;}
+  
+  </style>
+</head>
+<body>
+   <h2 style="color:white;text-align:centre;background-color:green;padding:10px;margin:2px; border-radius:10px">JavaScript Tasks question  -> <u>write down  </u></h2>
+  <div class="q">
+  <div class="q">
+    Q1. Write a program to print your name and address<br>
+    Q2.Write a program to check whether value and data-type of two variable are same.<br>
+	Q3.Write a program to add two strings and return them with all alphabet capital.<br>
+	Q4.Write a JavaScript program to convert the length of a given string in bytes.<br>
+	Q5.Write a JavaScript program to round a number to a specified amount of digits.<br>
+	<br>
+	<h2 style="color:white;text-align:centre;background-color:green;padding:10px;border-radius:10px;margin:2px">JavaScript Tasks Output -> <u>Check Console</u></h2>
+  </div>
+  <script>
+
+    let name = "chhotu kumar";
+    let address = "Begusarai, Bihar, India";
+    console.log(`1. Name: ${name}`);
+    console.log(`   Address: ${address}\n`);
+
+
+    function isSameValueAndType(a, b) {
+      return a === b;
+    }
+    console.log(`2. isSameValueAndType(58, '5'): ${isSameValueAndType(5, '5')}`);
+    console.log(`   isSameValueAndType(5, 5): ${isSameValueAndType(5, 5)}\n`);
+
+
+    function addStringsUpper(str1, str2) {
+      return (str1 + str2).toUpperCase();
+    }
+    console.log(`3. addStringsUpper('hello', 'world'): ${addStringsUpper('web', 'dev')}\n`);
+
+
+    function stringLengthInBytes(str) {
+      return new TextEncoder().encode(str).length;
+    }
+    console.log(`4. stringLengthInBytes('hello'): ${stringLengthInBytes('hello')} bytes\n`);
+
+
+    function roundToDigits(num, digits) {
+      return Number(num.toFixed(digits));
+    }
+    console.log(`5. roundToDigits(55.58432, 2): ${roundToDigits(7.58432, 2)}`);
+  </script>
+</body>
+</html>
