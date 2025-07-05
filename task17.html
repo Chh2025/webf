@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exception Handling Examples in JavaScript</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f2f2f2;
+      color: #333;
+    }
+
+    header {
+      background-color: #2c3e50;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    pre {
+      background-color: #1e1e1e;
+      color: #f1f1f1;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-size: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      background-color: #ecf0f1;
+      color: #555;
+    }
+
+    code {
+      font-family: Consolas, 'Courier New', monospace;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Exception Handling Examples in JavaScript</h1>
+  </header>
+
+  <div class="container">
+
+    <section>
+      <h2>1. Handle Exception Caused by Undeclared Variable</h2>
+      <pre><code>try {
+  console.log(x); // x is not declared
+} catch (error) {
+  console.log("Error caught:", error.message);
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>2. Throw "Divide by Zero" Error using throw Statement</h2>
+      <pre><code>function divide(a, b) {
+  if (b === 0) {
+    throw new Error("Divide by Zero Error");
+  }
+  return a / b;
+}
+
+try {
+  let result = divide(10, 0);
+  console.log("Result:", result);
+} catch (error) {
+  console.log("Caught:", error.message);
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>3. Throw "Out of Bound" Error using throw Statement</h2>
+      <pre><code>function getElement(arr, index) {
+  if (index &lt; 0 || index &gt;= arr.length) {
+    throw new Error("Out of Bound Error");
+  }
+  return arr[index];
+}
+
+try {
+  let myArray = [10, 20, 30];
+  console.log(getElement(myArray, 5));
+} catch (error) {
+  console.log("Caught:", error.message);
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>4. Exception Handling using finally Statement</h2>
+      <pre><code>try {
+  let a = 5;
+  let b = 0;
+  if (b === 0) {
+    throw new Error("Cannot divide by zero");
+  }
+  console.log(a / b);
+} catch (error) {
+  console.log("Error:", error.message);
+} finally {
+  console.log("This block always runs (cleanup, logging, etc.)");
+}</code></pre>
+    </section>
+
+  </div>
+
+  <footer>
+    &copy; 2025 | JavaScript Exception Handling Examples
+  </footer>
+
+  <!-- JavaScript Execution -->
+  <script>
+    // Q1: Undeclared variable
+    try {
+      console.log(x);
+    } catch (error) {
+      console.log("Q1 Error:", error.message);
+    }
+
+    // Q2: Divide by zero
+    function divide(a, b) {
+      if (b === 0) {
+        throw new Error("Divide by Zero Error");
+      }
+      return a / b;
+    }
+
+    try {
+      let result = divide(10, 0);
+      console.log("Q2 Result:", result);
+    } catch (error) {
+      console.log("Q2 Caught:", error.message);
+    }
+
+    // Q3: Out of bound access
+    function getElement(arr, index) {
+      if (index < 0 || index >= arr.length) {
+        throw new Error("Out of Bound Error");
+      }
+      return arr[index];
+    }
+
+    try {
+      let myArray = [10, 20, 30];
+      console.log("Q3 Value:", getElement(myArray, 5));
+    } catch (error) {
+      console.log("Q3 Caught:", error.message);
+    }
+
+    // Q4: Finally block
+    try {
+      let a = 5;
+      let b = 0;
+      if (b === 0) {
+        throw new Error("Cannot divide by zero");
+      }
+      console.log(a / b);
+    } catch (error) {
+      console.log("Q4 Error:", error.message);
+    } finally {
+      console.log("Q4 Finally block executed");
+    }
+  </script>
+</body>
+</html>
