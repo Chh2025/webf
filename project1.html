@@ -1,98 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Travel Diary</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="majorpstyles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Travel Diary</title>
+  <link rel="stylesheet" href="majorpstyles.css" />
 </head>
 <body>
-  <header>
-    <div class="logo">My Travel Diary</div>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="auth-buttons">
-      <a href="#login"><button>Login</button></a>
-      <a href="#signup"><button>Sign Up</button></a>
-    </div>
-  </header>
+  <header>
+    <div class="logo">My Travel Diary</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <a href="#login"><button>Login</button></a>
+      <a href="#signup"><button>Sign Up</button></a>
+    </div>
+  </header>
 
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>Welcome to My Travel Diary</h1>
-      <p>Explore my favorite adventures and memories from around the world.</p>
-    </div>
-  </section>
+  <section id="home" class="hero">
+    <h1>Welcome to My Travel Diary</h1>
+    <p>Explore my favorite adventures and memories from around the world.</p>
+  </section>
 
-  <main>
-    <section id="about" class="section">
-      <h2>About Me</h2>
-      <p><span>I’m a travel enthusiast who loves to capture the beauty of nature, architecture, and cultures. This page is a collection of my travel memories and dreams.</span></p>
-    </section>
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p><span>I’m a travel enthusiast who loves to capture the beauty of nature, architecture, and cultures. 
+  This page is a collection of my travel memories and dreams.</span></p>
+  </section>
 
-    <section id="gallery" class="section gallery">
-      <h2>Photo Gallery</h2>
-      <div class="gallery-grid">
-        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDEwfHx0cmF2ZWx8ZW58MHx8fHwxNjE2NTI4MDMy&ixlib=rb-1.2.1&q=80&w=400" alt="Lake Braies, Italy">
-        <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDV8fHRyYXZlbHxlbnwwfHx8fDE2MTY1MjgwMzI&ixlib=rb-1.2.1&q=80&w=400" alt="Mountain landscape">
-        <img src="https://images.unsplash.com/photo-1527631746610-b940a3407d0d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDI3fHx0cmF2ZWx8ZW58MHx8fHwxNjE2NTI4MDMy&ixlib=rb-1.2.1&q=80&w=400" alt="Hot air balloons">
-        <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fG5hdHVyZXxlbnwwfHx8fDE2MTY1MjgwMzI&ixlib=rb-1.2.1&q=80&w=400" alt="Misty forest path">
-      </div>
-    </section>
+  <section id="gallery" class="section gallery">
+    <h2>Photo Gallery</h2>
+    <div class="gallery-grid">
+      <img src="Endangered.jpg"alt="Place 1">
+      <img src="Wild.jpg" alt="Place 2">
+      <img src="img.jpeg" alt="Place 3">
+      <img src="img4.jpg" alt="Place 4">
+    </div>
+  </section>
+<iframe width="100%" height="455" style="border-radius:-20%;border-color:aquamarine;" src="https://www.youtube.com/embed/tgbNymZ7vqY" 
+  title="Travel Video" frameborder="2" allowfullscreen></iframe>
+  <section id="contact" class="section contact-form">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder=" EnterYour Name" required>
+      <input type="email" placeholder=" Enter Your Email" required>
+      <textarea rows="5" placeholder=" Enter Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
 
-    <section class="section">
-        <h2>A Glimpse of My Journeys</h2>
-        <iframe title="Travel Video" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-    </section>
+    
+  </section>
 
-    <section id="travel-video" class="split-section">
-      <div class="video-half">
-        <video controls width="100%">
-          <source src="trvonmoon.mp4" type="video/mp4" />
-        </video>
-      </div>
-      <div class="desc-half">
-        <h3>Himalayan Serenity</h3>
-        <p>This mesmerizing view was captured during a trek in the Himalayas. The crisp air, the sound of distant waterfalls, and the panoramic snow-capped peaks make it one of the most breathtaking experiences of my journey.</p>
-      </div>
-    </section>
+ 
 
-    <section class="image-text-split">
-      <div class="image-half">
-        <img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDd8fGN1bHR1cmV8ZW58MHx8fHwxNjE2NTI4MDMy&ixlib=rb-1.2.1&q=80&w=400" alt="People walking on a street in a foreign city">
-      </div>
-      <div class="text-half">
-        <h2>Travel Deeper – Cultures, Flavors & Untold Stories</h2>
-        <p>"Go beyond tourist hotspots. Our videos dive into local traditions, street food secrets, and the heartbeat of every destination. Press play and travel with purpose."</p>
-      </div>
-    </section>
-    
-    <section id="contact" class="section contact-form">
-      <h2>Contact Me</h2>
-      <form>
-        <input type="text" placeholder="Enter Your Name" required>
-        <input type="email" placeholder="Enter Your Email" required>
-        <textarea rows="5" placeholder="Enter Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
-  </main>
+  <section id="travel-video" class="split-section">
+  <div class="video-half">
+    <video controls width="100%">
+      <source src="trvonmoon.mp4" type="video/mp4" />
+      
+    </video>
+  </div>
+  <div class="desc-half">
+    <img src="img.jpeg" alt="Mountain Trekking">
+    <p>
+      This mesmerizing view was captured during a trek in the Himalayas. 
+      The crisp air, the sound of distant waterfalls, and the panoramic snow-capped peaks make it 
+      one of the most breathtaking experiences of my journey.
+    </p>
+     <section id="gallery" class="section gallery">
+  
+    <h2>Photo Gallery</h2>
 
-  <footer>
-    <p>© 2025 My Travel Diary | Follow me on 
-      <a href="#"><span>Instagram</span></a> | 
-      <a href="#"><span>GitHub</span></a> | 
-      <a href="#"><span>Youtube</span></a>
-    </p>
-  </footer>
+    <div class="gallery-grid">
+      <img src="background.jpg"alt="Place 1">
+      <img src="my.png" alt="Place 2">
+      <img src="atplc.png" alt="Place 3">
+      <img src="img.jpeg" alt="Place 4">
+    </div>
+  </section>
+  </div>
+  <div class="image-text-split">
+  <img src="img.jpeg" alt="Left Image">
+  <div class="text-content">
+    <h1 class="allh1">"Travel Deeper – Cultures, Flavors & Untold Stories"</h1>
+    <p>"Go beyond tourist hotspots. 
+      Our videos dive into local traditions, street food secrets, and the heartbeat of every destination.
+       Press play and travel with purpose."</p>
+  </div>
+</div>
+</section>
+
+  <footer>
+    <p>© 2025  My Travel Diary | Follow me on 
+      <a href="#"><span>Instagram</span></a> | <a href="#"><span>GitHub</span></a> | <a href="#"><span>Youtube</span></a>
+    </p>
+  </footer>
+ 
 </body>
+</html> 
+
 </html>
