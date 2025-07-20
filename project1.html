@@ -1,108 +1,366 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Travel Diary</title>
-  <link rel="stylesheet" href="majorpstyles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Travel Diary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ===== 1. Global Styles & Variables ===== */
+    :root {
+      --primary-color: #004d40; /* Deep Teal */
+      --secondary-color: #ffab40; /* Amber/Orange Accent */
+      --background-light: #fdfaf6; /* Warm Off-White */
+      --text-dark: #333;
+      --text-light: #fff;
+      --section-bg: #fff;
+      --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      --font-heading: 'Playfair Display', serif;
+      --font-body: 'Montserrat', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      line-height: 1.7;
+      background: var(--background-light);
+      color: var(--text-dark);
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    /* ===== 2. Header & Navigation ===== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--primary-color);
+      color: var(--text-light);
+      padding: 1rem 2rem;
+      flex-wrap: wrap;
+      box-shadow: var(--shadow);
+    }
+
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: var(--secondary-color);
+    }
+
+    .auth-buttons button {
+      background: var(--secondary-color);
+      border: none;
+      color: var(--text-dark);
+      padding: 0.5rem 1rem;
+      margin-left: 0.5rem;
+      border-radius: 50px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .auth-buttons button:hover {
+      background: #ffc400; /* Lighter Amber */
+      transform: translateY(-2px);
+    }
+
+    /* ===== 3. Hero Section ===== */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat;
+      color: var(--text-light);
+      text-align: center;
+      padding: 8rem 1rem;
+      position: relative;
+    }
+    /* Overlay for text readability */
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+    }
+    .hero-content {
+        position: relative;
+        z-index: 1;
+    }
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    /* ===== 4. General Section Styling ===== */
+    .section {
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .section h2 {
+        font-family: var(--font-heading);
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--primary-color);
+    }
+
+    /* ===== 5. Gallery & Media ===== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    iframe {
+        width: 100%;
+        max-width: 800px; /* Limit max width on large screens */
+        height: 450px;
+        border: none;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        margin: 0 auto;
+    }
+
+    /* ===== 6. Split & Content Sections ===== */
+    .split-section, .image-text-split {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem;
+      margin: 0 1rem;
+      background: var(--section-bg);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .video-half, .desc-half, .image-half, .text-half {
+      flex: 1 1 45%; /* Flex-grow, flex-shrink, flex-basis */
+      min-width: 300px; /* Wraps when below this width */
+    }
+
+    .video-half video, .image-half img {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .desc-half h3, .text-half h2 {
+        font-family: var(--font-heading);
+        font-size: 2rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    /* ===== 7. Contact Form ===== */
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      margin: auto;
+      gap: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+        outline: none;
+        border-color: var(--secondary-color);
+        box-shadow: 0 0 0 3px hsla(39, 100%, 62%, 0.4);
+    }
+
+    .contact-form button {
+      padding: 1rem 2rem;
+      background-color: var(--primary-color);
+      color: var(--text-light);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #00251a; /* Darker Teal */
+    }
+
+    /* ===== 8. Footer ===== */
+    footer {
+      background: var(--primary-color);
+      color: var(--text-light);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+    /* ===== 9. Responsive Design (Media Query) ===== */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      /* Make split sections stack vertically */
+      .split-section, .image-text-split {
+          flex-direction: column;
+          margin: 0 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="logo">My Travel Diary</div>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="auth-buttons">
-      <a href="#login"><button>Login</button></a>
-      <a href="#signup"><button>Sign Up</button></a>
-    </div>
-  </header>
+  <header>
+    <div class="logo">My Travel Diary</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <a href="#login"><button>Login</button></a>
+      <a href="#signup"><button>Sign Up</button></a>
+    </div>
+  </header>
 
-  <section id="home" class="hero">
-    <h1>Welcome to My Travel Diary</h1>
-    <p>Explore my favorite adventures and memories from around the world.</p>
-  </section>
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Welcome to My Travel Diary</h1>
+      <p>Explore my favorite adventures and memories from around the world.</p>
+    </div>
+  </section>
 
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <p><span>I’m a travel enthusiast who loves to capture the beauty of nature, architecture, and cultures. 
-  This page is a collection of my travel memories and dreams.</span></p>
-  </section>
+  <main>
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p><span>I’m a travel enthusiast who loves to capture the beauty of nature, architecture, and cultures. This page is a collection of my travel memories and dreams.</span></p>
+    </section>
 
-  <section id="gallery" class="section gallery">
-    <h2>Photo Gallery</h2>
-    <div class="gallery-grid">
-      <img src="Endangered.jpg"alt="Place 1">
-      <img src="Wild.jpg" alt="Place 2">
-      <img src="img.jpeg" alt="Place 3">
-      <img src="img4.jpg" alt="Place 4">
-    </div>
-  </section>
-<iframe width="100%" height="455" style="border-radius:-20%;border-color:aquamarine;" src="https://www.youtube.com/embed/tgbNymZ7vqY" 
-  title="Travel Video" frameborder="2" allowfullscreen></iframe>
-  <section id="contact" class="section contact-form">
-    <h2>Contact Me</h2>
-    <form>
-      <input type="text" placeholder=" EnterYour Name" required>
-      <input type="email" placeholder=" Enter Your Email" required>
-      <textarea rows="5" placeholder=" Enter Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+    <section id="gallery" class="section gallery">
+      <h2>Photo Gallery</h2>
+      <div class="gallery-grid">
+        <img src="img.jpeg" alt="Lake Braies, Italy">
+        <img src="img4.jpg" alt="Mountain landscape">
+        <img src="Wild.jpg" alt="Hot air balloons">
+        <img src="img.jpeg" alt="Misty forest path">
+      </div>
+    </section>
 
-    
-  </section>
+    <section class="section">
+        <h2>A Glimpse of My Journeys</h2>
+        <iframe title="Travel Video" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+    </section>
 
- 
+    <section id="travel-video" class="split-section">
+      <div class="video-half">
+        <video controls width="100%">
+          <source src="trvonmoon.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="desc-half">
+        <h3>Himalayan Serenity</h3>
+        <p>This mesmerizing view was captured during a trek in the Himalayas. The crisp air, the sound of distant waterfalls, and the panoramic snow-capped peaks make it one of the most breathtaking experiences of my journey.</p>
+      </div>
+    </section>
 
-  <section id="travel-video" class="split-section">
-  <div class="video-half">
-    <video controls width="100%">
-      <source src="trvonmoon.mp4" type="video/mp4" />
-      
-    </video>
-  </div>
-  <div class="desc-half">
-    <img src="img.jpeg" alt="Mountain Trekking">
-    <p>
-      This mesmerizing view was captured during a trek in the Himalayas. 
-      The crisp air, the sound of distant waterfalls, and the panoramic snow-capped peaks make it 
-      one of the most breathtaking experiences of my journey.
-    </p>
-     <section id="gallery" class="section gallery">
-  
-    <h2>Photo Gallery</h2>
+    <section class="image-text-split">
+      <div class="image-half">
+        <img src="img4.jpg" alt="People walking on a street in a foreign city">
+      </div>
+      <div class="text-half">
+        <h2>Travel Deeper – Cultures, Flavors & Untold Stories</h2>
+        <p>"Go beyond tourist hotspots. Our videos dive into local traditions, street food secrets, and the heartbeat of every destination. Press play and travel with purpose."</p>
+      </div>
+    </section>
+    
+    <section id="contact" class="section contact-form">
+      <h2>Contact Me</h2>
+      <form>
+        <input type="text" placeholder="Enter Your Name" required>
+        <input type="email" placeholder="Enter Your Email" required>
+        <textarea rows="5" placeholder="Enter Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
 
-    <div class="gallery-grid">
-      <img src="background.jpg"alt="Place 1">
-      <img src="my.png" alt="Place 2">
-      <img src="atplc.png" alt="Place 3">
-      <img src="img.jpeg" alt="Place 4">
-    </div>
-  </section>
-  </div>
-  <div class="image-text-split">
-  <img src="img.jpeg" alt="Left Image">
-  <div class="text-content">
-    <h1 class="allh1">"Travel Deeper – Cultures, Flavors & Untold Stories"</h1>
-    <p>"Go beyond tourist hotspots. 
-      Our videos dive into local traditions, street food secrets, and the heartbeat of every destination.
-       Press play and travel with purpose."</p>
-  </div>
-</div>
-</section>
-
-  <footer>
-    <p>© 2025  My Travel Diary | Follow me on 
-      <a href="#"><span>Instagram</span></a> | <a href="#"><span>GitHub</span></a> | <a href="#"><span>Youtube</span></a>
-    </p>
-  </footer>
- 
+  <footer>
+    <p>© 2025 My Travel Diary | Follow me on 
+      <a href="#"><span>Instagram</span></a> | 
+      <a href="#"><span>GitHub</span></a> | 
+      <a href="#"><span>Youtube</span></a>
+    </p>
+  </footer>
 </body>
-</html> 
-
 </html>
